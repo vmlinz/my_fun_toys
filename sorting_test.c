@@ -84,7 +84,7 @@ int merge_sort_test(void)
 	my_utl_input(arr, n);
 	my_utl_print(arr, n);
 
-	merge_sort(arr, 0, n);
+	merge_sort(arr, 0, n-1);
 	my_utl_print(arr,n);
 
 	my_utl_delete_array(arr);
@@ -94,9 +94,9 @@ int merge_sort_test(void)
 
 int main(int argc, char *argv[])
 {
-	bubble_sort_test();
-	insertion_sort_test();
-	selection_sort_test();
+//	bubble_sort_test();
+//	insertion_sort_test();
+//	selection_sort_test();
 	merge_sort_test();
 
 	return 0;
