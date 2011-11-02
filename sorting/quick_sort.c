@@ -8,13 +8,13 @@ int parttion(int *arr, int low, int high)
 
 	while(low < high)
 	{
-		while((low < high) && (pvtkey <= arr[high])
+		while((low < high) && (pvtkey <= arr[high]))
 		{
 			--high;
 		}
 		arr[low] = arr[high];
 
-		while((low < high) && (pvtkey >= arr[low])
+		while((low < high) && (pvtkey >= arr[low]))
 		{
 			++low;
 		}

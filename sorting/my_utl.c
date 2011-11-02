@@ -42,3 +42,7 @@ void my_utl_print(int *array, int n)
 
 	putchar('\n');
 }
+
+int my_utl_array_sorted(int *array, int n)
+{
+}
