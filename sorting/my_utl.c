@@ -21,17 +21,17 @@ void my_utl_delete_array(int *array)
 		free(array);
 }
 
-void my_utl_input(int *array, int n)
+void my_utl_input_array(int *array, int n)
 {
 	int i;
 
 	for(i=0; i<n; i++)
 	{
-		scanf("%d", (array+i));
+		array[i] = rand()%100;
 	}
 }
 
-void my_utl_print(int *array, int n)
+void my_utl_print_array(int *array, int n)
 {
 	int i;
 
@@ -45,4 +45,15 @@ void my_utl_print(int *array, int n)
 
 int my_utl_array_sorted(int *array, int n)
 {
+	int i;
+	int flag = 1;
+	for(i=0; i<n-1; i++)
+	{
+		if(array[i] > array[i+1])
+		{
+			flag = 0;
+		}
+	}
+	return flag;
+
 }

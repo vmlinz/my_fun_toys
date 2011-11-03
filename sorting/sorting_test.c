@@ -12,18 +12,20 @@
 int bubble_sort_test(void)
 {
 	int *brr = NULL;
-	int n = 5;
+	int n = rand()%10;
 
-//	printf("%s:\n", __func__);
 	brr = my_utl_new_array(n);
 
-	printf("Please input %d %s\n", n, n > 1 ? "integer" : "integers");
+	printf("bubble_sort_test:\n");
 
-	my_utl_input(brr, n);
-	my_utl_print(brr, n);
+	my_utl_input_array(brr, n);
 
 	bubble_sort(brr, n);
-	my_utl_print(brr,n);
+
+	if( my_utl_array_sorted(brr,n) )
+		printf("ok\n");
+	else
+		printf("failed\n");
 
 	my_utl_delete_array(brr);
 
@@ -33,20 +35,21 @@ int bubble_sort_test(void)
 int insertion_sort_test(void)
 {
 	int *arr = NULL;
-	int n = 5;
+	int n = rand()%10;
 
-//	printf("%s:\n", __func__);
 	arr = my_utl_new_array(n);
+	printf("insertion_sort_test:\n");
 
-	printf("Please Input an array of %d integers\n", n);
-
-	my_utl_input(arr, n);
-	my_utl_print(arr, n);
+	my_utl_input_array(arr, n);
 
 	insertion_sort(arr, 0, n);
-	my_utl_print(arr,n);
 
-	my_utl_delete_array(arr);
+    if( my_utl_array_sorted(arr,n) )
+		printf("ok\n");
+	else
+		printf("failed\n");
+
+    my_utl_delete_array(arr);
 
 	return 0;
 }
@@ -54,18 +57,20 @@ int insertion_sort_test(void)
 int selection_sort_test(void)
 {
 	int *arr = NULL;
-	int n = 5;
+	int n = rand()%10;
 
-//	printf("%s:\n", __func__);
 	arr = my_utl_new_array(n);
 
-	printf("Please Input an array of %d integers\n", n);
+	printf("selection_sort_test:\n");
 
-	my_utl_input(arr, n);
-	my_utl_print(arr, n);
+	my_utl_input_array(arr, n);
 
 	selection_sort(arr, n);
-	my_utl_print(arr,n);
+
+	if( my_utl_array_sorted(arr,n) )
+		printf("ok\n");
+	else
+		printf("failed\n");
 
 	my_utl_delete_array(arr);
 
@@ -75,18 +80,21 @@ int selection_sort_test(void)
 int merge_sort_test(void)
 {
 	int *arr = NULL;
-	int n = 5;
 
-//	printf("%s:\n", __func__);
+	int n = rand()%10;
+
 	arr = my_utl_new_array(n);
 
-	printf("Please Input an array of %d integers\n", n);
+	printf("merge_sort_test:\n");
 
-	my_utl_input(arr, n);
-	my_utl_print(arr, n);
+	my_utl_input_array(arr, n);
 
 	merge_sort(arr, 0, n-1);
-	my_utl_print(arr,n);
+
+	if( my_utl_array_sorted(arr,n) )
+		printf("ok\n");
+	else
+		printf("failed\n");
 
 	my_utl_delete_array(arr);
 
@@ -96,18 +104,21 @@ int merge_sort_test(void)
 int quick_sort_test(void)
 {
 	int *arr = NULL;
-	int n = 5;
 
-//	printf("%s:\n", __func__);
+	int n = rand()%10;
+
 	arr = my_utl_new_array(n);
 
-	printf("Please Input an array of %d integers\n", n);
+	printf("quick_sort_test:\n");
 
-	my_utl_input(arr, n);
-	my_utl_print(arr, n);
+	my_utl_input_array(arr, n);
 
 	quick_sort(arr, 0, n-1);
-	my_utl_print(arr,n);
+
+	if( my_utl_array_sorted(arr,n) )
+		printf("ok\n");
+	else
+		printf("failed\n");
 
 	my_utl_delete_array(arr);
 
