@@ -27,7 +27,7 @@ void my_utl_input_array(int *array, int n)
 
 	for(i=0; i<n; i++)
 	{
-		array[i] = rand()%100;
+		array[i] = rand()%1000;
 	}
 }
 
@@ -37,7 +37,7 @@ void my_utl_print_array(int *array, int n)
 
 	for(i=0;i<n;i++)
 	{
-		printf("%d",array[i]);
+		printf("%d ",array[i]);
 	}
 
 	putchar('\n');

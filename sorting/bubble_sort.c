@@ -23,7 +23,6 @@ void bubble_sort(int *array, int n)
 
 		if(1==flag)
 		{
-			printf("%d\n",i);
 			break;
 		}
 	}
