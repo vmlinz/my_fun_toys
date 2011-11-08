@@ -13,7 +13,7 @@
 int bubble_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("bubble_sort_test:");
@@ -34,7 +34,7 @@ int bubble_sort_test(void)
 int insertion_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("insertion_sort_test:");
@@ -55,7 +55,7 @@ int insertion_sort_test(void)
 int selection_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("selection_sort_test:");
@@ -76,7 +76,7 @@ int selection_sort_test(void)
 int merge_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("merge_sort_test:");
@@ -97,7 +97,7 @@ int merge_sort_test(void)
 int quick_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("quick_sort_test:");
@@ -118,7 +118,7 @@ int quick_sort_test(void)
 int heap_sort_test(void)
 {
 	int *arr = NULL;
-	int n = rand()%10;
+	int n = random()%10;
 
 	arr = my_utl_new_array(n);
 	printf("heap_sort_test:");

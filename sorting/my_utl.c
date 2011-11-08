@@ -25,9 +25,11 @@ void my_utl_input_array(int *array, int n)
 {
 	int i;
 
+
 	for(i=0; i<n; i++)
 	{
-		array[i] = rand()%1000;
+		srandom(100 * i + 1);
+		array[i] = random() % 65535;
 	}
 }
 

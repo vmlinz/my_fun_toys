@@ -11,7 +11,8 @@ static void _sift_down(int *array, int root, int end)
 
 	done = 0;
 
-	while((root * 2 + 1<= end) && (!done))
+	/* swap parent with larger child through to end of the array */
+	while((root * 2 + 1 <= end) && (!done))
 	{
 		if(root * 2 + 1 == end)
 			swap = root * 2 + 1;
@@ -34,9 +35,11 @@ void heap_sort(int *array, int len)
 {
 	int i;
 
+	/* 1. heapify */
 	for(i = (len / 2) - 1; i >=0; i--)
 		_sift_down(array, i, len - 1);
 
+	/* 2. maintain heap by sifting down */
 	for(i = len - 1; i >= 1; i--)
 	{
 		swap_int(&array[i], &array[0]);
