@@ -59,3 +59,25 @@ int my_utl_array_sorted(int *array, int n)
 	return flag;
 
 }
+
+int my_utl_sort_test(my_sort_func sort_func)
+{
+	int *arr = NULL;
+	int n = random()%10;
+	int ret = -1;
+
+	assert(sort_func);
+
+	arr = my_utl_new_array(n);
+
+	my_utl_input_array(arr, n);
+
+	sort_func(arr, n);
+
+	if(my_utl_array_sorted(arr,n))
+		ret = 0;
+
+	my_utl_delete_array(arr);
+
+	return ret;
+}

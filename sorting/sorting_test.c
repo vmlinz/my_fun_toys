@@ -9,131 +9,133 @@
 #include "merge_sort.h"
 #include "quick_sort.h"
 #include "heap_sort.h"
+#include "shell_sort.h"
+
+void insertion_sort_wrapper(int *a, int n)
+{
+	insertion_sort(a, 0, n);
+}
+
+void merge_sort_wrapper(int *a, int n)
+{
+	merge_sort(a, 0, n - 1);
+}
+
+void quick_sort_wrapper(int *a, int n)
+{
+	quick_sort(a, 0, n - 1);
+}
 
 int bubble_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("bubble_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	bubble_sort(arr, n);
+	ret = my_utl_sort_test(bubble_sort);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
-
-	return 0;
+	return ret;
 }
 
 int insertion_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("insertion_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	insertion_sort(arr, 0, n);
+	ret = my_utl_sort_test(insertion_sort_wrapper);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
-
-	return 0;
+	return ret;
 }
 
 int selection_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("selection_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	selection_sort(arr, n);
+	ret = my_utl_sort_test(selection_sort);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
-
-	return 0;
+	return ret;
 }
 
 int merge_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("merge_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	merge_sort(arr, 0, n-1);
+	ret = my_utl_sort_test(merge_sort_wrapper);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
-
-	return 0;
+	return ret;
 }
 
 int quick_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("quick_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	quick_sort(arr, 0, n-1);
+	ret = my_utl_sort_test(quick_sort_wrapper);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
-
-	return 0;
+	return ret;
 }
 
 int heap_sort_test(void)
 {
-	int *arr = NULL;
-	int n = random()%10;
+	int ret = -1;
 
-	arr = my_utl_new_array(n);
-	printf("heap_sort_test:");
+	printf("%s:", __func__);
 
-	my_utl_input_array(arr, n);
-	heap_sort(arr, n);
+	ret = my_utl_sort_test(heap_sort);
 
-	if(my_utl_array_sorted(arr,n))
+	if(ret == 0)
 		printf("ok\n");
 	else
 		printf("failed\n");
 
-	my_utl_delete_array(arr);
+	return ret;
+}
 
-	return 0;
+int shell_sort_test(void)
+{
+	int ret = -1;
+
+	printf("%s:", __func__);
+
+	ret = my_utl_sort_test(shell_sort);
+
+	if(ret == 0)
+		printf("ok\n");
+	else
+		printf("failed\n");
+
+	return ret;
 }
 
 int main(int argc, char *argv[])
@@ -144,6 +146,7 @@ int main(int argc, char *argv[])
 	merge_sort_test();
 	quick_sort_test();
 	heap_sort_test();
+	shell_sort_test();
 
 	return 0;
 }
